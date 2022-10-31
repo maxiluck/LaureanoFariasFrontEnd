@@ -1,0 +1,41 @@
+.row{
+    padding-top: 20px;
+    
+}
+
+
+div{
+    text-align: center;
+    background-color: rgba(0, 152, 253, 0.445);
+}
+
+
+/*ESTILO FOTO*/
+
+@media (min-width:576px){
+    #fotodeperfil{
+        position: absolute;
+        width: 15%;
+        border-radius: 100%;
+        box-shadow: 3px 3px 3px rgba(37, 37, 37, 0.555);
+        left: 2%;
+        top: 500px;
+        padding-right: 2px;
+    }
+}
+
+@media (max-width:575px){
+    #fotodeperfil{
+        width: 30%;
+        border-radius: 100%;
+        box-shadow: 3px 3px 3px grey;
+        left: 30%;
+        top: 500px;
+    }
+}
+
+#nombre{
+    font-weight: bold;
+    margin-top: 0%;
+    color: rgb(255, 0, 0);
+}
