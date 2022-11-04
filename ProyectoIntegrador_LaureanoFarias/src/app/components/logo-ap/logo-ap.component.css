@@ -4,7 +4,11 @@
 }
 
 nav{
+    height: 100PX;
     display: flex;
     flex-direction: column;
+}
 
+.nav-item{
+    color: rgb(253, 249, 249);
 }
