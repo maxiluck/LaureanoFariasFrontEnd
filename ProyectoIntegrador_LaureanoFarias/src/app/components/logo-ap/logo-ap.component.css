@@ -1,5 +1,6 @@
 #logoap{
     width: 200px;
+    color: rgb(250, 250, 250);
     
 }
 
@@ -11,4 +12,9 @@ nav{
 
 .nav-item{
     color: rgb(253, 249, 249);
+}
+
+.sociales{
+    margin-right: 10px;
+
 }
