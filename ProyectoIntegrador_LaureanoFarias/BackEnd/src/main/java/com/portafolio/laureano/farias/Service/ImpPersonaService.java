@@ -17,13 +17,13 @@ public class ImpPersonaService implements IPersonaService{
     }
 
     @Override
-    public void saverPersona(Persona persona) {
+    public void savePersona(Persona persona) {
        ipersonaRepository.save(persona);
        
     }
 
     @Override
-    public void deletepersona(Long id) {
+    public void deletePersona(Long id) {
         ipersonaRepository.deleteById(id);
     }
 
@@ -32,11 +32,5 @@ public class ImpPersonaService implements IPersonaService{
         Persona persona = ipersonaRepository.findById(id).orElse(null);
         return persona;
     }
-
-    @Override
-    public void savePersona(Persona persona) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
     
 }

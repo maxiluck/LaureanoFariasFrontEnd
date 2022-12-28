@@ -11,15 +11,12 @@ public interface IPersonaService {
     
     //guardar un objeto de tipo persona
     
-    public void saverPersona(Persona persona);
+    public void savePersona(Persona persona);
     
     //Eliminar un usuario
     
-    public void deletepersona(Long id);
-    
+    public void deletePersona(Long id);
     //Buscar una persona
     
     public Persona findPersona(Long id);
-
-    public void savePersona(Persona persona);
 }
