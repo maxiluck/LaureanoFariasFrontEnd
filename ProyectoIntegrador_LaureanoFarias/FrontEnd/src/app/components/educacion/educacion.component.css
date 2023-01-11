@@ -23,6 +23,7 @@
     .row:hover{
         box-shadow: 6px 6px 30px rgb(252, 4, 4);
         transition: 1s;
+        
     }
     
     .row{
@@ -72,6 +73,7 @@
     overflow: hidden;
     display: block;
     width: 100%;
+    
   }
   
   #align {

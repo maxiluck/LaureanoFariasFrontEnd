@@ -4,6 +4,10 @@ body{
     display: flex;
 }
 
+.row {
+	--bs-gutter-x: 0rem;
+}
+
 @keyframes gradient-animation {
     0% {
       background-position: 0% 50%;

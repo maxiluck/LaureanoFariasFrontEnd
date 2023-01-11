@@ -1,38 +1,36 @@
-<div class="row col-12">
-    <h1 class="titulo">EDUCACION</h1>
-    <div class="col-lg-11" id="align">
-        <ul>
-            <li>
-                <h1>TRABAJO 1</h1> - <H3>(YEARS)</H3>
-            </li>
-            <P>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                 Adipisci aperiam dolorum ducimus aspernatur nihil? Quod ut
-                  omnis enim cumque aspernatur, 
-                  unde praesentium cupiditate quo ea 
-                  possimus commodi voluptas non libero!</P>
-        </ul>
+<div class="row col-12 no-gutters">
+    <h1 class="titulo">Educación</h1>
 
-        <ul>
-            <li>
-                <h1>TRABAJO 2</h1> - <H3>(YEARS)</H3>
-            </li>
-            <P>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                 Adipisci aperiam dolorum ducimus aspernatur nihil? Quod ut
-                  omnis enim cumque aspernatur, 
-                  unde praesentium cupiditate quo ea 
-                  possimus commodi voluptas non libero!</P>
-        </ul>
+    <div class="col-lg-2">
+<button type="button" class="btn btn-light" routerLink="/nuevaedu" *ngIf="isLogged">
+    Agregar Educación
+</button>
+    </div>
 
-        <ul>
-            <li>
-                <h1>TRABAJO 3</h1> - <H3>(YEARS)</H3>
-            </li>
-            <P>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                 Adipisci aperiam dolorum ducimus aspernatur nihil? Quod ut
-                  omnis enim cumque aspernatur, 
-                  unde praesentium cupiditate quo ea 
-                  possimus commodi voluptas non libero!</P>
-        </ul>
+    <div class="col-lg-1"></div>
+    <div class="col-lg-11">
+        <table class="table" *ngFor="let Educacion of educacion">
+            <tbody>
+                <tr >
+                    <td style="color: aliceblue;">
+                       <h2>{{Educacion.nombreE}}</h2>
+                    </td>
+
+                    <td style="color: aliceblue;">
+                        {{Educacion.descripcionE}}
+                    </td>
+
+                    <td *ngIf="isLogged" style="color: aliceblue;" ><button class="btn btn-light" routerLink="/editedu/{{Educacion.id}}">
+                        <i class="bi bi-pencil-fill"></i>Editar</button>
+                    </td>
+
+                    <td *ngIf="isLogged" style="color: rgb(255, 255, 255);" ><button class="btn btn-danger" (click)="delete(Educacion.id)">
+                        <i class="bi bi-trash2"></i>Borrar</button>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
         
     </div>
 </div>
