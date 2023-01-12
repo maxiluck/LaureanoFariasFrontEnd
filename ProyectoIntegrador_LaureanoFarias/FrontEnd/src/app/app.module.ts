@@ -17,7 +17,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {HttpHandler} from '@angular/common/http'
 import { interceptorProvider } from './service/interceptor-service';
@@ -25,6 +25,13 @@ import { NewExperienciaComponent } from './components/experiencia/new-experienci
 import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
 import { NeweducacionComponent } from './components/educacion/neweducacion.component';
 import { EditeducacionComponent } from './components/educacion/editeducacion.component';
+import { HysComponent } from './components/graficos/hys.component';
+import { EditSkillComponent } from './components/graficos/edit-skill.component';
+import { NewSkillComponent } from './components/graficos/new-skill.component';
+import { EditAcercaDeComponent } from './components/acerca-de/edit-acerca-de.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -36,7 +43,7 @@ import { EditeducacionComponent } from './components/educacion/editeducacion.com
     AcercaDeComponent,
     ExperienciaComponent,
     EducacionComponent,
-    GraficosComponent,
+    HysComponent,
     ProyectosComponent,
     FooterComponent,
     HomeComponent,
@@ -44,15 +51,22 @@ import { EditeducacionComponent } from './components/educacion/editeducacion.com
     NewExperienciaComponent,
     EditExperienciaComponent,
     NeweducacionComponent,
-    EditeducacionComponent
+    EditeducacionComponent,
+    EditSkillComponent,
+    GraficosComponent,
+    NewSkillComponent,
+    EditAcercaDeComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    FormsModule,
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
-    FormsModule,
-    BrowserAnimationsModule
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage())
   ],
   providers: [
     interceptorProvider
