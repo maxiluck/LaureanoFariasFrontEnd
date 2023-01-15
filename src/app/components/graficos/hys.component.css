@@ -2,9 +2,12 @@
     text-align: center;
     width: 100%;
   border-radius: 30px;
-  box-shadow: 10px 15px 10px #bebebe41,
+  box-shadow: 10px 15px 10px #d4d4d441,
              -10px -15px 30px #ffffff4f;
-             background-color: rgb(29, 28, 28);
+             background-color: rgb(2, 2, 2);
+             margin-top: 50px;
+             
+
              
 }
 
@@ -21,6 +24,13 @@ h1{
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+.prime{
+    flex-direction: column;
+    align-items: center;
+    display: flex;
 }
 
 button{

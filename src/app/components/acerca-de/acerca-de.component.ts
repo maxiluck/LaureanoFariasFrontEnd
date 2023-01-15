@@ -10,22 +10,21 @@ import { TokenService } from 'src/app/service/token.service';
 })
 export class AcercaDeComponent implements OnInit {
   persona: persona = null;
-
-  constructor(public personaService: PersonaService,
-    private tokenService: TokenService) { }
-  isLogged= false;
+  
+  constructor(public personaService: PersonaService, private tokenService: TokenService) { }
+  isLogged = false;
 
   ngOnInit(): void {
-    this.cargarPersona()
+    this.cargarPersona();
     if(this.tokenService.getToken()){
-      this.isLogged = true;
+      this.isLogged=true;
     } else {
-      this.isLogged = false;
+      this.isLogged=false;
     }
   }
-
   cargarPersona(){
-    this.personaService.detail(1).subscribe(data =>
-      {this.persona = data})
+    this.personaService.detail(1).subscribe(data =>{
+      this.persona = data}
+    )
+    }
   }
-}

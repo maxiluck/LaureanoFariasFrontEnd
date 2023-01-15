@@ -17,4 +17,10 @@ nav{
 .sociales{
     margin-right: 10px;
 
+
+}
+
+#navbarSupportedContent{
+flex-direction: row;
+justify-content: flex-end;
 }

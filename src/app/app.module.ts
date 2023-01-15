@@ -14,12 +14,12 @@ import { GraficosComponent } from './components/graficos/graficos.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { FooterComponent } from './components/footer/footer.component';
+import {HttpClientXsrfModule} from '@angular/common/http';
 import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import {HttpHandler} from '@angular/common/http'
+import { ReactiveFormsModule } from '@angular/forms';
 import { interceptorProvider } from './service/interceptor-service';
 import { NewExperienciaComponent } from './components/experiencia/new-experiencia.component';
 import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
@@ -35,6 +35,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
+
     AppComponent,
     HeaderComponent,
     LogoAPComponent,
@@ -59,16 +60,22 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     
   ],
   imports: [
+    HttpClientXsrfModule,
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
+    ReactiveFormsModule,
     FormsModule,
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage())
+   
 
   ],
+
+
   providers: [
-    interceptorProvider
+    interceptorProvider 
   ],
   bootstrap: [AppComponent]
 })
